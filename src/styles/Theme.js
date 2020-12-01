@@ -1,6 +1,6 @@
 export default {
- mainThemeColor: "#96DFE1",
- subThemeColor: "#039EFF",
+ mainThemeColor: "#7DCCF5",
+ subThemeColor: "#6376F4",
  pointColor: "#017BFD",
  errorColor: "#FF0202",
  checkColor: "#40FA02",
@@ -8,6 +8,7 @@ export default {
  whiteColor: "#fff",
  blackColor: "#0b0b0b",
  greyColor: "#777",
+ grey2Color: "#303952",
 
  radius: "4px",
  border: "1px solid #777",

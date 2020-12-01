@@ -22,6 +22,8 @@ const MM00Container = () => {
     
     
     ////////// USE EFFECT   //////////
+
+    return <MM00Presenter />
 }
 
 export default MM00Container;
