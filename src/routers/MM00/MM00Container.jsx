@@ -1,29 +1,31 @@
 import React from "react";
-import MM00Presenter from "./MM00Presenter"
+import { useQuery } from "react-apollo-hooks";
+import MM00Presenter from "./MM00Presenter";
+import { GET_ALL_VIDEOS } from "./MM00Queries";
 
 const MM00Container = () => {
-    
-    ////////// VARIABLE     //////////
+ ////////// VARIABLE     //////////
 
+ ////////// USE SATETE   //////////
 
-    ////////// USE SATETE   //////////
-    
-    
-    ////////// USE REF      //////////
-    
-    
-    ////////// USE CONTEXT  //////////
+ ////////// USE REF      //////////
 
+ ////////// USE CONTEXT  //////////
 
-    ////////// USE QUERY    //////////
-    
-    
-    ////////// USE MUTATION //////////
-    
-    
-    ////////// USE EFFECT   //////////
+ ////////// USE QUERY    //////////
 
-    return <MM00Presenter />
-}
+ const {
+  data: videoDatum,
+  loading: videoLoading,
+  refetch: videoRefetch,
+ } = useQuery(GET_ALL_VIDEOS);
+ //const { data, loading, refetch } = useQuery(가져온 query 이름);
+
+ ////////// USE MUTATION //////////
+
+ ////////// USE EFFECT   //////////
+
+ return <MM00Presenter videoDatum={videoDatum && videoDatum.getAllVideos} />;
+};
 
 export default MM00Container;

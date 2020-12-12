@@ -27,7 +27,7 @@ const WrapWrapper = styled(Wrapper)`
  flex-wrap: wrap;
 `;
 
-const MM00Presenter = () => {
+const MM00Presenter = ({ videoDatum }) => {
  return (
   <Wrapper>
    <Wrapper height={`400px`} padding={`25px`} dr={`row`}>
@@ -54,61 +54,31 @@ const MM00Presenter = () => {
      </Wrapper>
     </Fade>
    </Wrapper>
-   <Zoom >
+   <Zoom>
     <BarWrapper></BarWrapper>
-   </Zoom >
-   <Fade bottom>
-    <WrapWrapper dr={`row`} margin={`0px 0px 100px 0px`}>
-     <ImageBox
-      width={`320px`}
-      height={`180px`}
-      bgImg={`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZoTIF1vwiRU7JWDUgEgpe2_05dOEGVWfxIQ&usqp=CAU`}
-      margin={`5px`}
-     ></ImageBox>
-     <ImageBox
-      width={`320px`}
-      height={`180px`}
-      bgImg={`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZoTIF1vwiRU7JWDUgEgpe2_05dOEGVWfxIQ&usqp=CAU`}
-      margin={`5px`}
-     ></ImageBox>
-     <ImageBox
-      width={`320px`}
-      height={`180px`}
-      bgImg={`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZoTIF1vwiRU7JWDUgEgpe2_05dOEGVWfxIQ&usqp=CAU`}
-      margin={`5px`}
-     ></ImageBox>
-     <ImageBox
-      width={`320px`}
-      height={`180px`}
-      bgImg={`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZoTIF1vwiRU7JWDUgEgpe2_05dOEGVWfxIQ&usqp=CAU`}
-      margin={`5px`}
-     ></ImageBox>
-     <ImageBox
-      width={`320px`}
-      height={`180px`}
-      bgImg={`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZoTIF1vwiRU7JWDUgEgpe2_05dOEGVWfxIQ&usqp=CAU`}
-      margin={`5px`}
-     ></ImageBox>
-     <ImageBox
-      width={`320px`}
-      height={`180px`}
-      bgImg={`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZoTIF1vwiRU7JWDUgEgpe2_05dOEGVWfxIQ&usqp=CAU`}
-      margin={`5px`}
-     ></ImageBox>
-     <ImageBox
-      width={`320px`}
-      height={`180px`}
-      bgImg={`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZoTIF1vwiRU7JWDUgEgpe2_05dOEGVWfxIQ&usqp=CAU`}
-      margin={`5px`}
-     ></ImageBox>
-     <ImageBox
-      width={`320px`}
-      height={`180px`}
-      bgImg={`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZoTIF1vwiRU7JWDUgEgpe2_05dOEGVWfxIQ&usqp=CAU`}
-      margin={`5px`}
-     ></ImageBox>
-    </WrapWrapper>
-   </Fade>
+   </Zoom>
+   <WrapWrapper dr={`row`} margin={`0px 0px 100px 0px`}>
+    {videoDatum ? (
+     videoDatum.length === 0 ? (
+      <Wrapper>미디어 목록이 없습니다.</Wrapper>
+     ) : (
+      videoDatum.map((data, idx) => {
+       return (
+        <Fade bottom delay={idx * 60} key={idx}>
+         <ImageBox
+          width={`320px`}
+          height={`180px`}
+          bgImg={data.thumbnailPath}
+          margin={`5px`}
+         ></ImageBox>
+        </Fade>
+       );
+      })
+     )
+    ) : (
+     <Wrapper>조회 중 입다.</Wrapper>
+    )}
+   </WrapWrapper>
   </Wrapper>
  );
 };
