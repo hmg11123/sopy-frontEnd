@@ -76,7 +76,7 @@ const MM00Presenter = ({ videoDatum }) => {
       })
      )
     ) : (
-     <Wrapper>조회 중 입다.</Wrapper>
+     <Wrapper>조회 중 입니다.</Wrapper>
     )}
    </WrapWrapper>
   </Wrapper>
