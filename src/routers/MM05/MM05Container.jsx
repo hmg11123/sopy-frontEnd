@@ -64,7 +64,7 @@ const MM05Container = () => {
   console.log(data);
  };
 
- const sarchPostHandler = () => {
+ const searchPostHandler = () => {
   new daum.Postcode({
    oncomplete: function (data) {
     newZoneCode.setValue(data.zonecode);
@@ -82,7 +82,7 @@ const MM05Container = () => {
    newZoneCode={newZoneCode}
    newAddress={newAddress}
    newDetailAddress={newDetailAddress}
-   sarchPostHandler={sarchPostHandler}
+   searchPostHandler={searchPostHandler}
    registUserHandler={registUserHandler}
   />
  );

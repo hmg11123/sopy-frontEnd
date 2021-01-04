@@ -97,7 +97,7 @@ const MM05Presenter = ({
  newAddress,
  newDetailAddress,
  registUserHandler,
- sarchPostHandler,
+ searchPostHandler,
 }) => {
  return (
   <Wrapper>
@@ -125,7 +125,7 @@ const MM05Presenter = ({
       readOnly={true}
       {...newZoneCode}
      ></TextInput>
-     <PostButton onClick={sarchPostHandler}>검색</PostButton>
+     <PostButton onClick={searchPostHandler}>검색</PostButton>
     </RowWrapper>
     <TextInput
      type="text"

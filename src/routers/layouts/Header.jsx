@@ -37,7 +37,7 @@ const ActionP = styled.p`
  }
 `;
 
-const Header = () => {
+const Header = ({ history }) => {
  const moveLinkHandler = (link) => {
   history.push(link);
  };
