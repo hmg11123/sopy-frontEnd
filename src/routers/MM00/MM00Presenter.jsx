@@ -27,7 +27,32 @@ const WrapWrapper = styled(Wrapper)`
  flex-wrap: wrap;
 `;
 
-const MM00Presenter = ({ videoDatum }) => {
+const FileInput = styled.input`
+ display: none;
+`;
+
+const FileLabel = styled.label`
+ width: 120px;
+ height: 25px;
+ line-height: 25px;
+ background-color: ${(props) => props.theme.checkColor};
+ color: ${(props) => props.theme.whiteColor};
+ box-shadow: ${(props) => props.theme.boxShadow};
+ margin: 5px;
+ border-radius: ${(props) => props.theme.radius};
+ cursor: pointer;
+ text-align: center;
+`;
+
+const Image = styled.img`
+ width: 400px;
+ height: 400px;
+ border: 1px soild #777;
+ margin: 10px;
+ object-fit: cover;
+`;
+
+const MM00Presenter = ({ videoDatum, fileChangeHandler, imagePath }) => {
  return (
   <Wrapper>
    <Wrapper height={`400px`} padding={`25px`} dr={`row`}>
@@ -79,6 +104,10 @@ const MM00Presenter = ({ videoDatum }) => {
      <Wrapper>조회 중 입니다.</Wrapper>
     )}
    </WrapWrapper>
+   {/** FILE UPLOAD TEST */}
+   <Image src={`${imagePath}`} />
+   <FileInput type="file" id="file-js" onChange={fileChangeHandler} />
+   <FileLabel htmlFor="file-js">파일선택</FileLabel>
   </Wrapper>
  );
 };
